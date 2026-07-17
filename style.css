@@ -1,0 +1,2020 @@
+/* =========================================
+   EK DOORDARSHI - STYLE.CSS
+   PART 1
+   Global • Background • Moon • Navbar • Hero
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap');
+
+:root{
+
+--bg:#080405;
+--bg2:#14080b;
+--card:rgba(255,255,255,.05);
+--glass:rgba(255,255,255,.07);
+--border:rgba(255,255,255,.12);
+
+--primary:#6d1f2c;
+--primary-light:#9d3046;
+--primary-dark:#3b0c17;
+
+--text:#f8f3f1;
+--muted:#d4c9c6;
+
+--shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Cormorant Garamond',serif;
+
+background:
+radial-gradient(circle at top,#2a0b15 0%,#13070a 30%,#080405 100%);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#12070a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(var(--primary),#b13d57);
+
+border-radius:20px;
+
+}
+
+/* Progress */
+
+#progressBar{
+
+position:fixed;
+
+top:0;
+left:0;
+
+height:4px;
+
+width:0;
+
+background:linear-gradient(90deg,#8f263d,#d04f70);
+
+z-index:9999;
+
+}
+
+/* =====================
+   STARS
+===================== */
+
+.stars{
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px);
+
+background-size:65px 65px;
+
+opacity:.18;
+
+z-index:-5;
+
+animation:starsMove 180s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-800px);
+
+}
+
+}
+
+/* =====================
+   SHOOTING STAR
+===================== */
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:180px;
+height:2px;
+
+background:linear-gradient(90deg,#fff,transparent);
+
+top:15%;
+
+left:-20%;
+
+transform:rotate(-25deg);
+
+animation:shoot 9s linear infinite;
+
+opacity:.7;
+
+z-index:-3;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+left:-20%;
+top:15%;
+opacity:0;
+
+}
+
+8%{
+
+opacity:1;
+
+}
+
+18%{
+
+left:120%;
+top:45%;
+
+opacity:0;
+
+}
+
+100%{
+
+opacity:0;
+
+}
+
+}
+
+/* =====================
+   MOON
+===================== */
+
+.moon{
+
+position:fixed;
+
+right:6%;
+
+top:7%;
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle at 30% 30%,
+#ffffff,
+#ececec 35%,
+#d5d5d5 60%,
+#bababa);
+
+box-shadow:
+
+0 0 70px rgba(255,255,255,.35),
+
+0 0 180px rgba(120,25,45,.35),
+
+0 0 320px rgba(120,25,45,.15);
+
+animation:moonFloat 7s ease-in-out infinite;
+
+z-index:-2;
+
+}
+
+.moon::before{
+
+content:"";
+
+position:absolute;
+
+width:45px;
+height:45px;
+
+border-radius:50%;
+
+background:rgba(170,170,170,.25);
+
+top:55px;
+left:70px;
+
+box-shadow:
+
+70px 40px 0 rgba(170,170,170,.18),
+
+40px 130px 0 rgba(170,170,170,.16),
+
+120px 110px 0 rgba(170,170,170,.20);
+
+}
+
+@keyframes moonFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/* =====================
+   NAVBAR
+===================== */
+
+nav{
+
+position:sticky;
+
+top:20px;
+
+width:92%;
+
+max-width:1200px;
+
+margin:20px auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 35px;
+
+background:rgba(20,8,10,.55);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:60px;
+
+box-shadow:var(--shadow);
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-family:'Noto Serif Devanagari',serif;
+
+font-size:32px;
+
+font-weight:700;
+
+color:white;
+
+letter-spacing:1px;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:#ddd;
+
+font-size:18px;
+
+transition:.35s;
+
+position:relative;
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-6px;
+
+width:0;
+
+height:2px;
+
+background:#b83f59;
+
+transition:.35s;
+
+}
+
+nav a:hover{
+
+color:white;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+/* =====================
+   HERO
+===================== */
+
+header{
+
+min-height:95vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:50px 20px;
+
+}
+
+header small{
+
+letter-spacing:6px;
+
+font-size:15px;
+
+color:#d8b6bc;
+
+margin-bottom:20px;
+
+}
+
+header h1{
+
+font-family:'Noto Serif Devanagari',serif;
+
+font-size:clamp(70px,10vw,130px);
+
+margin-bottom:25px;
+
+line-height:1.1;
+
+text-shadow:
+
+0 0 30px rgba(160,55,80,.35);
+
+}
+
+.hero-text{
+
+max-width:760px;
+
+font-size:24px;
+
+line-height:1.9;
+
+color:var(--muted);
+
+margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:16px 38px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:600;
+
+color:white;
+
+background:linear-gradient(135deg,#7c2235,#b83f59);
+
+transition:.35s;
+
+box-shadow:0 15px 35px rgba(124,34,53,.35);
+
+}
+
+.btn:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 25px 45px rgba(124,34,53,.45);
+
+}
+
+.btn.secondary{
+
+background:transparent;
+
+border:1px solid rgba(255,255,255,.2);
+
+}
+/* =========================================
+   PART 2
+   Sections • Search • Cards • About
+   Instagram • Contact • Footer
+=========================================*/
+
+/* =====================
+   GENERAL SECTIONS
+===================== */
+
+section{
+
+width:90%;
+max-width:1200px;
+margin:120px auto;
+
+}
+
+section h2{
+
+font-size:54px;
+
+font-family:'Noto Serif Devanagari',serif;
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#fff;
+
+}
+
+section>.subtitle{
+
+text-align:center;
+
+max-width:700px;
+
+margin:0 auto 60px;
+
+font-size:22px;
+
+color:#d2c5c5;
+
+line-height:1.8;
+
+}
+
+/* =====================
+   SEARCH
+===================== */
+
+.search-box{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:35px;
+
+}
+
+.search-box input{
+
+width:500px;
+
+max-width:95%;
+
+padding:18px 25px;
+
+border-radius:50px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+color:white;
+
+font-size:18px;
+
+outline:none;
+
+transition:.35s;
+
+}
+
+.search-box input::placeholder{
+
+color:#999;
+
+}
+
+.search-box input:focus{
+
+border-color:#a5354e;
+
+box-shadow:0 0 30px rgba(165,53,78,.25);
+
+}
+
+/* =====================
+   CATEGORY BUTTONS
+===================== */
+
+.categories{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-bottom:60px;
+
+}
+
+.categories button{
+
+padding:12px 24px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+font-size:16px;
+
+background:rgba(255,255,255,.05);
+
+color:#ddd;
+
+transition:.35s;
+
+}
+
+.categories button:hover,
+
+.categories .active{
+
+background:linear-gradient(135deg,#7c2235,#b83f59);
+
+color:white;
+
+transform:translateY(-3px);
+
+}
+
+/* =====================
+   POEM CARDS
+===================== */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+.card{
+
+position:relative;
+
+padding:35px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+transition:.45s;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-120px;
+
+right:-120px;
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+background:rgba(150,35,60,.18);
+
+transition:.45s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+border-color:#a5354e;
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.card:hover::before{
+
+transform:scale(1.3);
+
+}
+
+.tag{
+
+display:inline-block;
+
+padding:6px 14px;
+
+border-radius:30px;
+
+font-size:14px;
+
+margin-bottom:18px;
+
+background:#6d1f2c;
+
+color:white;
+
+}
+
+.card h3{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+font-family:'Noto Serif Devanagari',serif;
+
+}
+
+.card p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#d8d1d1;
+
+margin-bottom:20px;
+
+}
+
+.card a{
+
+text-decoration:none;
+
+color:#d4667d;
+
+font-weight:600;
+
+}
+
+.card a:hover{
+
+color:white;
+
+}
+
+/* =====================
+   ABOUT
+===================== */
+
+#about{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.about-content h2{
+
+text-align:left;
+
+}
+
+.about-content p{
+
+font-size:22px;
+
+line-height:2;
+
+color:#d3c8c8;
+
+margin-bottom:25px;
+
+}
+
+.about-quote{
+
+padding:35px;
+
+border-left:5px solid #8b2339;
+
+background:rgba(255,255,255,.04);
+
+border-radius:20px;
+
+font-size:28px;
+
+font-style:italic;
+
+line-height:1.8;
+
+}
+
+/* =====================
+   INSTAGRAM
+===================== */
+
+.instagram-box{
+
+padding:60px;
+
+border-radius:35px;
+
+text-align:center;
+
+background:linear-gradient(145deg,#23090f,#130608);
+
+border:1px solid rgba(255,255,255,.06);
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.instagram-box i{
+
+font-size:80px;
+
+margin-bottom:25px;
+
+color:#d44763;
+
+}
+
+.instagram-box h3{
+
+font-size:40px;
+
+margin-bottom:20px;
+
+}
+
+.instagram-box p{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#d4c9c9;
+
+margin-bottom:35px;
+
+}
+
+.instagram-box .btn{
+
+display:inline-flex;
+
+}
+
+/* =====================
+   CONTACT
+===================== */
+
+#contact{
+
+text-align:center;
+
+}
+
+#contact p{
+
+max-width:700px;
+
+margin:20px auto 35px;
+
+font-size:22px;
+
+line-height:1.9;
+
+color:#d0c7c7;
+
+}
+
+.contact-links{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+.contact-links a{
+
+padding:15px 28px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.05);
+
+text-decoration:none;
+
+color:white;
+
+transition:.35s;
+
+}
+
+.contact-links a:hover{
+
+background:#7c2235;
+
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+footer{
+
+margin-top:120px;
+
+padding:70px 20px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer h2{
+
+font-family:'Noto Serif Devanagari',serif;
+
+font-size:40px;
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+font-size:20px;
+
+color:#bdb2b2;
+
+margin:12px 0;
+
+}
+
+.socials{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin:35px 0;
+
+}
+
+.socials a{
+
+width:55px;
+
+height:55px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+text-decoration:none;
+
+font-size:22px;
+
+color:white;
+
+transition:.35s;
+
+}
+
+.socials a:hover{
+
+background:#8b2339;
+
+transform:translateY(-5px);
+
+}
+/* =========================================
+   PART 2
+   Sections • Search • Cards • About
+   Instagram • Contact • Footer
+=========================================*/
+
+/* =====================
+   GENERAL SECTIONS
+===================== */
+
+section{
+
+width:90%;
+max-width:1200px;
+margin:120px auto;
+
+}
+
+section h2{
+
+font-size:54px;
+
+font-family:'Noto Serif Devanagari',serif;
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#fff;
+
+}
+
+section>.subtitle{
+
+text-align:center;
+
+max-width:700px;
+
+margin:0 auto 60px;
+
+font-size:22px;
+
+color:#d2c5c5;
+
+line-height:1.8;
+
+}
+
+/* =====================
+   SEARCH
+===================== */
+
+.search-box{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:35px;
+
+}
+
+.search-box input{
+
+width:500px;
+
+max-width:95%;
+
+padding:18px 25px;
+
+border-radius:50px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+color:white;
+
+font-size:18px;
+
+outline:none;
+
+transition:.35s;
+
+}
+
+.search-box input::placeholder{
+
+color:#999;
+
+}
+
+.search-box input:focus{
+
+border-color:#a5354e;
+
+box-shadow:0 0 30px rgba(165,53,78,.25);
+
+}
+
+/* =====================
+   CATEGORY BUTTONS
+===================== */
+
+.categories{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-bottom:60px;
+
+}
+
+.categories button{
+
+padding:12px 24px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+font-size:16px;
+
+background:rgba(255,255,255,.05);
+
+color:#ddd;
+
+transition:.35s;
+
+}
+
+.categories button:hover,
+
+.categories .active{
+
+background:linear-gradient(135deg,#7c2235,#b83f59);
+
+color:white;
+
+transform:translateY(-3px);
+
+}
+
+/* =====================
+   POEM CARDS
+===================== */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+.card{
+
+position:relative;
+
+padding:35px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+transition:.45s;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-120px;
+
+right:-120px;
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+background:rgba(150,35,60,.18);
+
+transition:.45s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+border-color:#a5354e;
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.card:hover::before{
+
+transform:scale(1.3);
+
+}
+
+.tag{
+
+display:inline-block;
+
+padding:6px 14px;
+
+border-radius:30px;
+
+font-size:14px;
+
+margin-bottom:18px;
+
+background:#6d1f2c;
+
+color:white;
+
+}
+
+.card h3{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+font-family:'Noto Serif Devanagari',serif;
+
+}
+
+.card p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#d8d1d1;
+
+margin-bottom:20px;
+
+}
+
+.card a{
+
+text-decoration:none;
+
+color:#d4667d;
+
+font-weight:600;
+
+}
+
+.card a:hover{
+
+color:white;
+
+}
+
+/* =====================
+   ABOUT
+===================== */
+
+#about{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.about-content h2{
+
+text-align:left;
+
+}
+
+.about-content p{
+
+font-size:22px;
+
+line-height:2;
+
+color:#d3c8c8;
+
+margin-bottom:25px;
+
+}
+
+.about-quote{
+
+padding:35px;
+
+border-left:5px solid #8b2339;
+
+background:rgba(255,255,255,.04);
+
+border-radius:20px;
+
+font-size:28px;
+
+font-style:italic;
+
+line-height:1.8;
+
+}
+
+/* =====================
+   INSTAGRAM
+===================== */
+
+.instagram-box{
+
+padding:60px;
+
+border-radius:35px;
+
+text-align:center;
+
+background:linear-gradient(145deg,#23090f,#130608);
+
+border:1px solid rgba(255,255,255,.06);
+
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.instagram-box i{
+
+font-size:80px;
+
+margin-bottom:25px;
+
+color:#d44763;
+
+}
+
+.instagram-box h3{
+
+font-size:40px;
+
+margin-bottom:20px;
+
+}
+
+.instagram-box p{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#d4c9c9;
+
+margin-bottom:35px;
+
+}
+
+.instagram-box .btn{
+
+display:inline-flex;
+
+}
+
+/* =====================
+   CONTACT
+===================== */
+
+#contact{
+
+text-align:center;
+
+}
+
+#contact p{
+
+max-width:700px;
+
+margin:20px auto 35px;
+
+font-size:22px;
+
+line-height:1.9;
+
+color:#d0c7c7;
+
+}
+
+.contact-links{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+.contact-links a{
+
+padding:15px 28px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.05);
+
+text-decoration:none;
+
+color:white;
+
+transition:.35s;
+
+}
+
+.contact-links a:hover{
+
+background:#7c2235;
+
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+footer{
+
+margin-top:120px;
+
+padding:70px 20px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer h2{
+
+font-family:'Noto Serif Devanagari',serif;
+
+font-size:40px;
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+font-size:20px;
+
+color:#bdb2b2;
+
+margin:12px 0;
+
+}
+
+.socials{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin:35px 0;
+
+}
+
+.socials a{
+
+width:55px;
+
+height:55px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+text-decoration:none;
+
+font-size:22px;
+
+color:white;
+
+transition:.35s;
+
+}
+
+.socials a:hover{
+
+background:#8b2339;
+
+transform:translateY(-5px);
+
+}
+/* =========================================
+   PART 3B
+   Responsive • Particles • Loader
+   Scroll Top • Final Polish
+=========================================*/
+
+/* ==========================
+   PARTICLES
+========================== */
+
+.background-animation{
+
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+z-index:-6;
+
+}
+
+.background-animation span{
+
+position:absolute;
+display:block;
+
+width:8px;
+height:8px;
+
+border-radius:50%;
+
+background:rgba(170,60,80,.35);
+
+animation:particle 20s linear infinite;
+
+}
+
+.background-animation span:nth-child(1){left:5%;animation-delay:0s;}
+.background-animation span:nth-child(2){left:18%;animation-delay:3s;}
+.background-animation span:nth-child(3){left:32%;animation-delay:6s;}
+.background-animation span:nth-child(4){left:45%;animation-delay:8s;}
+.background-animation span:nth-child(5){left:58%;animation-delay:10s;}
+.background-animation span:nth-child(6){left:72%;animation-delay:13s;}
+.background-animation span:nth-child(7){left:86%;animation-delay:16s;}
+.background-animation span:nth-child(8){left:95%;animation-delay:19s;}
+
+@keyframes particle{
+
+0%{
+
+transform:translateY(100vh) scale(.2);
+opacity:0;
+
+}
+
+15%{
+
+opacity:.5;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(2);
+opacity:0;
+
+}
+
+}
+
+/* ==========================
+   BACK TO TOP
+========================== */
+
+#topBtn{
+
+position:fixed;
+
+bottom:30px;
+right:30px;
+
+width:55px;
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#7c2235,#b83f59);
+
+color:#fff;
+
+cursor:pointer;
+
+font-size:22px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+transition:.35s;
+
+opacity:0;
+
+visibility:hidden;
+
+z-index:999;
+
+}
+
+#topBtn.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+#topBtn:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* ==========================
+   LOADER
+========================== */
+
+.loader{
+
+position:fixed;
+
+inset:0;
+
+background:#080405;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:.6s;
+
+}
+
+.loader.hidden{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+.loader-circle{
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+
+border:5px solid rgba(255,255,255,.1);
+
+border-top:5px solid #9d3046;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ==========================
+   TABLETS
+========================== */
+
+@media(max-width:992px){
+
+nav{
+
+padding:16px 25px;
+
+}
+
+nav ul{
+
+gap:20px;
+
+}
+
+header h1{
+
+font-size:72px;
+
+}
+
+.hero-text{
+
+font-size:22px;
+
+}
+
+#about{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+.instagram-box{
+
+padding:40px;
+
+}
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+
+gap:20px;
+
+border-radius:25px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.logo{
+
+font-size:28px;
+
+}
+
+header{
+
+padding:120px 20px 60px;
+
+}
+
+header h1{
+
+font-size:56px;
+
+}
+
+header small{
+
+letter-spacing:3px;
+
+font-size:12px;
+
+}
+
+.hero-text{
+
+font-size:19px;
+
+line-height:1.8;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.btn{
+
+width:100%;
+
+max-width:300px;
+
+margin:auto;
+
+}
+
+section{
+
+margin:80px auto;
+
+}
+
+section h2{
+
+font-size:38px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+padding:25px;
+
+}
+
+.card h3{
+
+font-size:28px;
+
+}
+
+.card p{
+
+font-size:18px;
+
+}
+
+.search-box input{
+
+font-size:16px;
+
+padding:14px 18px;
+
+}
+
+.categories{
+
+gap:10px;
+
+}
+
+.categories button{
+
+padding:10px 18px;
+
+font-size:14px;
+
+}
+
+.instagram-box{
+
+padding:30px 20px;
+
+}
+
+.instagram-box h3{
+
+font-size:30px;
+
+}
+
+footer{
+
+padding:50px 20px;
+
+}
+
+footer h2{
+
+font-size:30px;
+
+}
+
+footer p{
+
+font-size:17px;
+
+}
+
+.moon{
+
+width:170px;
+
+height:170px;
+
+right:-40px;
+
+top:60px;
+
+opacity:.6;
+
+}
+
+}
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media(max-width:480px){
+
+header h1{
+
+font-size:44px;
+
+}
+
+.hero-text{
+
+font-size:17px;
+
+}
+
+section h2{
+
+font-size:32px;
+
+}
+
+.card h3{
+
+font-size:24px;
+
+}
+
+}
+
+/* ==========================
+   END
+========================== */
+
+html{
+
+scroll-padding-top:100px;
+
+}
+
+body{
+
+animation:fadeUp .8s ease;
+
+}
