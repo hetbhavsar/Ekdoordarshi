@@ -656,3 +656,322 @@ transform:translate(-50%,-50%) scale(1.06);
 }
 
 }
+/* ===================================================
+   SECTIONS
+=================================================== */
+
+section{
+
+width:min(1200px,90%);
+
+margin:120px auto;
+
+position:relative;
+
+z-index:2;
+
+}
+
+section h2{
+
+font-family:'Noto Serif Devanagari',serif;
+
+font-size:clamp(36px,5vw,58px);
+
+text-align:center;
+
+margin-bottom:18px;
+
+color:#fff;
+
+}
+
+.subtitle{
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:60px;
+
+font-size:22px;
+
+line-height:1.8;
+
+text-align:center;
+
+color:rgba(255,255,255,.72);
+
+}
+
+
+/* ===================================================
+   SEARCH
+=================================================== */
+
+.search-box{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:45px;
+
+}
+
+.search-box input{
+
+width:min(650px,100%);
+
+padding:18px 24px;
+
+border-radius:60px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+color:#fff;
+
+font-size:18px;
+
+outline:none;
+
+transition:.35s;
+
+}
+
+.search-box input::placeholder{
+
+color:rgba(255,255,255,.45);
+
+}
+
+.search-box input:focus{
+
+border-color:#d85779;
+
+box-shadow:
+
+0 0 40px rgba(216,87,121,.25);
+
+}
+
+
+/* ===================================================
+   CATEGORY BUTTONS
+=================================================== */
+
+.categories{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:18px;
+
+margin-bottom:60px;
+
+}
+
+.categories button{
+
+padding:13px 28px;
+
+border-radius:40px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.05);
+
+color:#fff;
+
+cursor:pointer;
+
+font-size:16px;
+
+transition:.35s;
+
+backdrop-filter:blur(20px);
+
+}
+
+.categories button:hover,
+
+.categories .active{
+
+background:linear-gradient(135deg,#8c2942,#d85779);
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 10px 25px rgba(216,87,121,.25);
+
+}
+
+
+/* ===================================================
+   POETRY GRID
+=================================================== */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+
+/* ===================================================
+   CARD
+=================================================== */
+
+.card{
+
+position:relative;
+
+overflow:hidden;
+
+padding:35px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.45s;
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-120px;
+
+right:-120px;
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(216,87,121,.25),
+
+transparent 70%);
+
+transition:.45s;
+
+}
+
+.card:hover{
+
+transform:
+
+translateY(-10px)
+
+scale(1.02);
+
+border-color:#d85779;
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.card:hover::before{
+
+transform:scale(1.25);
+
+}
+
+.tag{
+
+display:inline-block;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+background:linear-gradient(
+
+135deg,
+
+#8c2942,
+
+#d85779);
+
+font-size:14px;
+
+color:#fff;
+
+margin-bottom:18px;
+
+}
+
+.card h3{
+
+font-family:'Noto Serif Devanagari',serif;
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:rgba(255,255,255,.78);
+
+margin-bottom:25px;
+
+}
+
+.card a{
+
+color:#ffb8c8;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.card a:hover{
+
+color:#fff;
+
+padding-left:6px;
+
+}
