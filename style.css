@@ -227,29 +227,33 @@ opacity:0;
 
 .moon{
     position:absolute;
-    top:50px;
-    right:-25px;
-    width:180px;
-    height:180px;
+    top:40px;
+    right:35px;
+
+    width:220px;
+    height:220px;
+
     border-radius:50%;
-    overflow:visible;
+    overflow:hidden;
 
     background:radial-gradient(
         circle at 30% 30%,
         #ffffff 0%,
-        #f3f3f3 35%,
-        #d8d8d8 65%,
-        #bcbcbc 100%
+        #fafafa 35%,
+        #ececec 60%,
+        #d7d7d7 85%,
+        #bfbfbf 100%
     );
 
     box-shadow:
-        0 0 60px rgba(255,255,255,.60),
-        0 0 120px rgba(255,255,255,.35),
-        0 0 220px rgba(180,110,130,.22),
-        0 0 380px rgba(120,35,55,.16);
+        0 0 80px rgba(255,255,255,.95),
+        0 0 180px rgba(255,255,255,.65),
+        0 0 320px rgba(255,255,255,.35),
+        0 0 500px rgba(255,255,255,.18);
 
-    opacity:.98;
-    z-index:0;
+    opacity:1;
+
+    z-index:1;
 
     animation:
         moonFloat 7s ease-in-out infinite,
@@ -291,68 +295,63 @@ opacity:0;
     position:absolute;
 
     left:50%;
-
     top:50%;
 
     transform:translate(-50%,-50%);
 
-    width:320px;
-
-    height:320px;
+    width:420px;
+    height:420px;
 
     border-radius:50%;
 
     background:radial-gradient(
-
         circle,
-
-        rgba(255,255,255,.28) 0%,
-
-        rgba(255,255,255,.12) 35%,
-
-        rgba(255,255,255,.05) 60%,
-
+        rgba(255,255,255,.45) 0%,
+        rgba(255,255,255,.22) 28%,
+        rgba(255,255,255,.08) 55%,
         transparent 100%
-
     );
 
-    filter:blur(30px);
+    filter:blur(45px);
 
     z-index:-1;
 
-    animation:moonGlow 6s ease-in-out infinite;
+    animation:moonGlow 5s ease-in-out infinite;
 
 }
 
-/* Moon Light */
+/* =====================
+   MOON LIGHT
+===================== */
 
 .moon-light{
-
     position:absolute;
-
-    inset:-20px;
-
+    left:50%;
+    top:50%;
+    width:420px;
+    height:420px;
+    transform:translate(-50%,-50%);
     border-radius:50%;
 
     background:radial-gradient(
-
         circle,
-
-        rgba(255,255,255,.20),
-
-        transparent 70%
-
+        rgba(255,255,255,.30) 0%,
+        rgba(255,255,255,.15) 30%,
+        rgba(255,255,255,.06) 55%,
+        transparent 75%
     );
 
-    filter:blur(22px);
-
-    animation:moonPulse 4s ease-in-out infinite;
-
+    filter:blur(35px);
+    pointer-events:none;
     z-index:-1;
 
+    animation:moonPulse 6s ease-in-out infinite;
 }
 
-/* Animations */
+
+/* =====================
+   MOON FLOAT
+===================== */
 
 @keyframes moonFloat{
 
@@ -366,6 +365,11 @@ opacity:0;
 
 }
 
+
+/* =====================
+   MOON GLOW
+===================== */
+
 @keyframes moonGlow{
 
     0%,100%{
@@ -375,117 +379,27 @@ opacity:0;
 
     50%{
         opacity:1;
-        transform:translate(-50%,-50%) scale(1.06);
+        transform:translate(-50%,-50%) scale(1.05);
     }
 
 }
+
+
+/* =====================
+   MOON PULSE
+===================== */
 
 @keyframes moonPulse{
 
     0%,100%{
-        opacity:.9;
+        transform:translate(-50%,-50%) scale(1);
+        opacity:.85;
     }
 
     50%{
+        transform:translate(-50%,-50%) scale(1.04);
         opacity:1;
     }
-
-}
-/* Moon Light */
-
-.moon-light{
-
-position:absolute;
-
-left:50%;
-
-top:50%;
-
-width:900px;
-
-height:900px;
-
-transform:translate(-50%,-50%);
-
-border-radius:50%;
-
-background:radial-gradient(
-circle,
-rgba(255,255,255,.18) 0%,
-rgba(255,255,255,.08) 20%,
-rgba(180,80,110,.05) 45%,
-transparent 70%
-);
-
-filter:blur(80px);
-
-pointer-events:none;
-
-animation:moonPulse 8s ease-in-out infinite;
-
-z-index:-2;
-
-}
-
-/* Moon Glow */
-
-@keyframes moonGlow{
-
-0%,100%{
-
-transform:scale(1);
-
-opacity:.8;
-
-}
-
-50%{
-
-transform:scale(1.08);
-
-opacity:1;
-
-}
-
-}
-
-/* Moon Light Pulse */
-
-@keyframes moonPulse{
-
-0%,100%{
-
-transform:translate(-50%,-50%) scale(1);
-
-opacity:.8;
-
-}
-
-50%{
-
-transform:translate(-50%,-50%) scale(1.08);
-
-opacity:1;
-
-}
-
-}
-
-/* Moon Floating */
-
-@keyframes moonFloat{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
 
 }
 /* =====================
