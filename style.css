@@ -225,44 +225,6 @@ opacity:0;
 /* =====================
    MOON
 ===================== */
-.moon-light{
-
-position:absolute;
-
-left:50%;
-
-top:50%;
-
-width:900px;
-
-height:900px;
-
-transform:translate(-50%,-50%);
-
-border-radius:50%;
-
-background:radial-gradient(circle,
-
-rgba(255,255,255,.18) 0%,
-
-rgba(255,255,255,.08) 20%,
-
-rgba(180,80,110,.05) 45%,
-
-transparent 70%
-
-);
-
-filter:blur(80px);
-
-animation:moonPulse 8s ease-in-out infinite;
-
-pointer-events:none;
-
-z-index:-2;
-
-}
-
 
 .moon{
 
@@ -303,6 +265,8 @@ z-index:-2;
 
 }
 
+/* Moon Craters */
+
 .moon::before{
 
 content:"";
@@ -328,6 +292,8 @@ box-shadow:
 120px 110px 0 rgba(170,170,170,.20);
 
 }
+
+/* Moon Outer Glow */
 
 .moon::after{
 
@@ -361,6 +327,44 @@ animation:moonGlow 6s ease-in-out infinite;
 
 }
 
+/* Moon Light */
+
+.moon-light{
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+width:900px;
+
+height:900px;
+
+transform:translate(-50%,-50%);
+
+border-radius:50%;
+
+background:radial-gradient(
+circle,
+rgba(255,255,255,.18) 0%,
+rgba(255,255,255,.08) 20%,
+rgba(180,80,110,.05) 45%,
+transparent 70%
+);
+
+filter:blur(80px);
+
+pointer-events:none;
+
+animation:moonPulse 8s ease-in-out infinite;
+
+z-index:-2;
+
+}
+
+/* Moon Glow */
+
 @keyframes moonGlow{
 
 0%,100%{
@@ -381,6 +385,30 @@ opacity:1;
 
 }
 
+/* Moon Light Pulse */
+
+@keyframes moonPulse{
+
+0%,100%{
+
+transform:translate(-50%,-50%) scale(1);
+
+opacity:.8;
+
+}
+
+50%{
+
+transform:translate(-50%,-50%) scale(1.08);
+
+opacity:1;
+
+}
+
+}
+
+/* Moon Floating */
+
 @keyframes moonFloat{
 
 0%,100%{
@@ -396,7 +424,6 @@ transform:translateY(-12px);
 }
 
 }
-
 /* =====================
    NAVBAR
 ===================== */
