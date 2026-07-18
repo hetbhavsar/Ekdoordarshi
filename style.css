@@ -13,7 +13,6 @@
 --card:rgba(255,255,255,.05);
 --glass:rgba(255,255,255,.07);
 --border:rgba(255,255,255,.12);
-
 --primary:#6d1f2c;
 --primary-light:#9d3046;
 --primary-dark:#3b0c17;
@@ -711,7 +710,7 @@ flex-wrap:wrap;
     }
 
     .btn{
-        width:220px;
+        width:260px;
     }
 }
 /* =========================================
