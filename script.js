@@ -464,3 +464,38 @@ behavior:"smooth"
 });
 
 }
+/* ===========================
+   RANDOM STARS
+=========================== */
+
+const starsContainer = document.getElementById("stars");
+
+if(starsContainer){
+
+for(let i=0;i<250;i++){
+
+const star=document.createElement("span");
+
+star.className="star";
+
+const size=Math.random()*3+1;
+
+star.style.width=size+"px";
+star.style.height=size+"px";
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDuration=
+(Math.random()*4+2)+"s";
+
+star.style.animationDelay=
+Math.random()*5+"s";
+
+star.style.opacity=Math.random();
+
+starsContainer.appendChild(star);
+
+}
+
+}
