@@ -226,18 +226,26 @@ opacity:0;
 ===================== */
 
 .moon{
-
-position:fixed;
-
-right:10%;
-
-top:12%;
-
-width:220px;
-
-height:220px;
-
-border-radius:50%;
+    position:absolute;
+    top:70px;
+    right:40px;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle at 30% 30%,
+        #ffffff 0%,
+        #f5f5f5 45%,
+        #d8d8d8 75%,
+        #bdbdbd 100%
+    );
+    box-shadow:
+        0 0 35px rgba(255,255,255,.35),
+        0 0 80px rgba(255,255,255,.15);
+    opacity:.95;
+    z-index:0;
+    animation:moonFloat 8s ease-in-out infinite;
+}
 
 background:
 radial-gradient(circle at 30% 30%,
@@ -267,63 +275,39 @@ z-index:-2;
 /* Moon Craters */
 
 .moon::before{
-
-content:"";
-
-position:absolute;
-
-width:45px;
-height:45px;
-
-border-radius:50%;
-
-background:rgba(170,170,170,.25);
-
-top:55px;
-left:70px;
-
-box-shadow:
-
-70px 40px 0 rgba(170,170,170,.18),
-
-40px 130px 0 rgba(170,170,170,.16),
-
-120px 110px 0 rgba(170,170,170,.20);
-
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 28% 30%, rgba(150,150,150,.28) 0 10px, transparent 11px),
+        radial-gradient(circle at 70% 28%, rgba(150,150,150,.20) 0 14px, transparent 15px),
+        radial-gradient(circle at 42% 72%, rgba(150,150,150,.22) 0 12px, transparent 13px),
+        radial-gradient(circle at 75% 68%, rgba(150,150,150,.18) 0 9px, transparent 10px),
+        radial-gradient(circle at 20% 60%, rgba(150,150,150,.15) 0 8px, transparent 9px);
 }
 
 /* Moon Outer Glow */
 
 .moon::after{
-
-content:"";
-
-position:absolute;
-
-left:-60px;
-
-top:-60px;
-
-width:380px;
-
-height:380px;
-
-border-radius:50%;
-
-background:radial-gradient(
-circle,
-rgba(255,255,255,.18) 0%,
-rgba(255,255,255,.08) 35%,
-rgba(120,35,55,.06) 65%,
-transparent 100%
-);
-
-filter:blur(35px);
-
-z-index:-1;
-
-animation:moonGlow 6s ease-in-out infinite;
-
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.22) 0%,
+        rgba(255,255,255,.10) 35%,
+        rgba(255,255,255,.04) 60%,
+        transparent 100%
+    );
+    filter:blur(28px);
+    z-index:-1;
+    animation:moonGlow 6s ease-in-out infinite;
 }
 
 /* Moon Light */
