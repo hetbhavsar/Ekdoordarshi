@@ -511,81 +511,44 @@ behavior:"smooth"
    SMOOTH SCROLL FOR ALL LINKS
 ========================== */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+const trail = document.createElement("div");
+trail.id = "trail";
+document.body.appendChild(trail);
 
-anchor.addEventListener('click',function(e){
+document.addEventListener("mousemove",(e)=>{
 
-e.preventDefault();
+    for(let i=0;i<8;i++){
 
-const target=document.querySelector(this.getAttribute('href'));
+        const dust=document.createElement("div");
+        dust.className="stardust";
 
-if(target){
+        dust.style.left=e.clientX+"px";
+        dust.style.top=e.clientY+"px";
 
-target.scrollIntoView({
+        const angle=Math.random()*Math.PI*2;
+        const distance=Math.random()*18;
 
-behavior:'smooth'
+        dust.style.setProperty(
+            "--x",
+            Math.cos(angle)*distance+"px"
+        );
 
-});
+        dust.style.setProperty(
+            "--y",
+            Math.sin(angle)*distance+"px"
+        );
 
-}
+        dust.style.width=(Math.random()*2+1)+"px";
+        dust.style.height=dust.style.width;
 
-});
+        dust.style.opacity=Math.random()*0.5+0.3;
 
-});
+        trail.appendChild(dust);
 
-const canvas = document.getElementById("cursorTrail");
-const ctx = canvas.getContext("2d");
+        setTimeout(()=>{
+            dust.remove();
+        },1400);
 
-let particles = [];
-
-function resize(){
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
-
-window.addEventListener("mousemove", e=>{
-
-    particles.push({
-        x:e.clientX,
-        y:e.clientY,
-        life:1,
-        size:12
-    });
-
-});
-
-function animate(){
-
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    for(let i=0;i<particles.length;i++){
-
-        let p=particles[i];
-
-        p.life-=0.02;
-        p.size*=0.98;
-
-        if(p.life<=0){
-            particles.splice(i,1);
-            i--;
-            continue;
-        }
-
-        ctx.beginPath();
-
-        ctx.fillStyle=`rgba(255,180,220,${p.life})`;
-
-        ctx.shadowBlur=25;
-        ctx.shadowColor="#ff8bb8";
-
-        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-
-        ctx.fill();
     }
 
-    requestAnimationFrame(animate);
-}
-
-animate();
+});
