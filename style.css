@@ -128,15 +128,28 @@ z-index:-3;
 ========================================== */
 
 .moon{
-    position: fixed !important;
+    position: fixed;
 
-    top: 350px !important;
-    right: 80px !important;
+    top: 180px;
+    right: 80px;
 
-    width: 320px !important;
-    height: 320px !important;
+    width: 320px;
+    height: 320px;
 
-    z-index: 999 !important;
+    border-radius: 50%;
+
+    background: radial-gradient(circle at 35% 35%,
+        #ffffff 0%,
+        #f4f4f4 45%,
+        #dddddd 100%);
+
+    box-shadow:
+        0 0 60px rgba(255,255,255,.5),
+        0 0 120px rgba(255,255,255,.2);
+
+    overflow: hidden;
+
+    z-index: 5;
 }
 
 @keyframes moonFloat{
