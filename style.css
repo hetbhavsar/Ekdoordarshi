@@ -663,9 +663,13 @@ align-items:center;
 
 justify-content:center;
 
-padding:16px 38px;
+padding:18px 42px;
 
-border-radius:50px;
+border-radius:60px;
+
+background:linear-gradient(135deg,#7c2235,#b83f59);
+
+color:#ffffff;
 
 text-decoration:none;
 
@@ -673,29 +677,39 @@ font-size:18px;
 
 font-weight:600;
 
-color:white;
+border:none;
 
-background:linear-gradient(135deg,#7c2235,#b83f59);
+cursor:pointer;
 
-transition:.35s;
+transition:all .35s ease;
 
-box-shadow:0 15px 35px rgba(124,34,53,.35);
+box-shadow:0 12px 35px rgba(124,34,53,.35);
 
 }
 
 .btn:hover{
 
-transform:translateY(-6px);
+transform:translateY(-5px);
 
-box-shadow:0 25px 45px rgba(124,34,53,.45);
+background:linear-gradient(135deg,#94314a,#cf5b78);
+
+box-shadow:0 20px 45px rgba(124,34,53,.5);
 
 }
 
 .btn.secondary{
 
-background:transparent;
+background:rgba(255,255,255,.08);
 
-border:1px solid rgba(255,255,255,.2);
+border:1px solid rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+
+}
+
+.btn.secondary:hover{
+
+background:rgba(255,255,255,.15);
 
 }
 /* =========================================
