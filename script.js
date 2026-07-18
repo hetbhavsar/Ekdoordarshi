@@ -162,7 +162,7 @@ observer.observe(el);
 
 /* ==========================================
    MOON PARALLAX
-========================================== */
+
 
 const moon=document.querySelector(".moon");
 
@@ -177,7 +177,7 @@ moon.style.transform=
 `translate(${x}px,${y}px)`;
 
 });
-
+========================================== */
 
 /* ==========================================
    SMOOTH NAV
