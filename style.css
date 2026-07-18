@@ -127,12 +127,12 @@ z-index:-3;
    PREMIUM MOON
 ========================================== */
 .moon{
-    position: fixed;
+    position: absolute;
     top: 180px;
     right: 80px;
 
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
 
     display: block;
 
