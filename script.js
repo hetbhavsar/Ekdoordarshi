@@ -532,3 +532,60 @@ behavior:'smooth'
 });
 
 });
+
+const canvas = document.getElementById("cursorTrail");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resize(){
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+window.addEventListener("mousemove", e=>{
+
+    particles.push({
+        x:e.clientX,
+        y:e.clientY,
+        life:1,
+        size:12
+    });
+
+});
+
+function animate(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    for(let i=0;i<particles.length;i++){
+
+        let p=particles[i];
+
+        p.life-=0.02;
+        p.size*=0.98;
+
+        if(p.life<=0){
+            particles.splice(i,1);
+            i--;
+            continue;
+        }
+
+        ctx.beginPath();
+
+        ctx.fillStyle=`rgba(255,180,220,${p.life})`;
+
+        ctx.shadowBlur=25;
+        ctx.shadowColor="#ff8bb8";
+
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+
+        ctx.fill();
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
