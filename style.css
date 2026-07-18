@@ -255,11 +255,72 @@ left:70px;
 
 box-shadow:
 
-70px 40px 0 rgba(170,170,170,.18),
+0 0 80px rgba(255,255,255,.65),
 
-40px 130px 0 rgba(170,170,170,.16),
+0 0 180px rgba(255,255,255,.35),
 
-120px 110px 0 rgba(170,170,170,.20);
+0 0 320px rgba(182,110,130,.30),
+
+0 0 520px rgba(120,35,55,.22),
+
+0 0 700px rgba(120,35,55,.12);
+   .moon::after{
+
+content:"";
+
+position:absolute;
+
+left:-60px;
+
+top:-60px;
+
+width:380px;
+
+height:380px;
+
+border-radius:50%;
+
+background:radial-gradient(
+
+circle,
+
+rgba(255,255,255,.18) 0%,
+
+rgba(255,255,255,.08) 35%,
+
+rgba(120,35,55,.06) 65%,
+
+transparent 100%
+
+);
+
+filter:blur(35px);
+
+z-index:-1;
+
+animation:moonGlow 6s ease-in-out infinite;
+
+}
+
+@keyframes moonGlow{
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:.8;
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+opacity:1;
+
+}
+
+}
 
 }
 
