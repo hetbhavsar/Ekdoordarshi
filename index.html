@@ -5,20 +5,16 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Ek Doordarshi | Hindi Poetry</title>
+<title>Ek Doordarshi</title>
 
 <meta name="description"
-content="Hindi poetry, emotions and stories by Het Bhavsar.">
+content="A collection of Hindi poetry written with emotion.">
 
-<meta name="keywords"
-content="Hindi Poetry, Shayari, Ek Doordarshi">
-
-<meta name="author"
-content="Het Bhavsar">
-
-<link rel="icon" href="favicon.ico">
+<link rel="icon"
+href="assets/images/favicon.png">
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
@@ -27,11 +23,8 @@ href="https://fonts.googleapis.com">
 href="https://fonts.gstatic.com"
 crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;700&display=swap"
 rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <link rel="stylesheet"
 href="style.css">
@@ -40,21 +33,37 @@ href="style.css">
 
 <body>
 
+<!-- Loader -->
+
+<div id="loader">
+
+<div class="loader-circle"></div>
+
+<h2>एक दूरदर्शी</h2>
+
+</div>
+
+<!-- Three.js Canvas -->
+
+<canvas id="bg"></canvas>
+
+<!-- Cursor -->
+
+<div class="cursor"></div>
+
+<!-- Progress -->
+
 <div id="progressBar"></div>
 
-<div class="stars" id="stars"></div>
-
-<div class="aurora"></div>
-
-<div class="moon"></div>
+<!-- Navbar -->
 
 <nav>
 
-<div class="logo">
+<a href="#" class="logo">
 
 एक दूरदर्शी
 
-</div>
+</a>
 
 <ul>
 
@@ -66,444 +75,137 @@ href="style.css">
 
 <li><a href="#instagram">Instagram</a></li>
 
-<li><a href="#contact">Contact</a></li>
-
 </ul>
 
 </nav>
 
+<!-- Hero -->
+
 <header id="home">
 
-    <div class="moon"></div>
+<div class="hero-content">
 
-    <div class="hero-content">
+<p class="hero-small">
 
-        <small class="hero-small">
-            WELCOME TO MY WORLD
-        </small>
+WELCOME TO MY WORLD
 
-        <h1>
-            एक दूरदर्शी
-        </h1>
+</p>
 
-        <p class="hero-text">
-            Some feelings cannot be spoken.
-            They quietly become poetry.
-        </p>
+<h1>
 
-        <div class="hero-buttons">
-            <a href="#poems" class="btn">Read Poems</a>
-            <a href="#about" class="btn secondary">About Me</a>
-        </div>
+एक दूरदर्शी
 
-        <div class="hero-quote">
-            ❝ Every poem begins where words fail. ❞
-        </div>
+</h1>
 
-        <div class="scroll-down">
-            <p>Scroll to Explore</p>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
+<p class="hero-text">
 
-    </div>
+Some feelings cannot be spoken.
+
+They quietly become poetry.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#poems"
+class="btn">
+
+Read Poems
+
+</a>
+
+<a href="#about"
+class="btn secondary">
+
+About Me
+
+</a>
+
+</div>
+
+</div>
 
 </header>
-<!-- ==========================================
-     POETRY SECTION
-========================================== -->
+<!-- Featured -->
+
+<section id="featured">
+
+<div class="featured-card">
+
+<h2>
+
+Featured Poem
+
+</h2>
+
+<p>
+
+This section will contain the latest featured poem.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Poetry -->
 
 <section id="poems">
 
-    <h2>Latest Poetry</h2>
+<h2>
 
-    <p class="subtitle">
-        Every poem is a conversation between the heart and the night.
-    </p>
+Poetry Collection
 
-    <div class="search-box">
+</h2>
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search poems...">
+<div class="poetry-grid">
 
-    </div>
-
-    <div class="categories">
-
-        <button class="active" data-filter="all">All</button>
-
-        <button data-filter="love">Love</button>
-
-        <button data-filter="life">Life</button>
-
-        <button data-filter="dreams">Dreams</button>
-
-        <button data-filter="hope">Hope</button>
-
-        <button data-filter="memories">Memories</button>
-
-    </div>
-
-    <div class="cards">
-
-        <article class="card love">
-
-            <span class="tag">Love</span>
-
-            <h3>Moonlight</h3>
-
-            <p>
-                Some hearts don't need promises.
-                They only need someone who stays.
-            </p>
-
-            <a href="#">Read More →</a>
-
-        </article>
-
-        <article class="card life">
-
-            <span class="tag">Life</span>
-
-            <h3>Silence</h3>
-
-            <p>
-                Silence has always spoken louder
-                than the words I never said.
-            </p>
-
-            <a href="#">Read More →</a>
-
-        </article>
-
-        <article class="card dreams">
-
-            <span class="tag">Dreams</span>
-
-            <h3>Night Sky</h3>
-
-            <p>
-                Every star reminds me that
-                darkness also creates beauty.
-            </p>
-
-            <a href="#">Read More →</a>
-
-        </article>
-
-        <article class="card hope">
-
-            <span class="tag">Hope</span>
-
-            <h3>Tomorrow</h3>
-
-            <p>
-                Every sunrise carries another
-                chance to become the person
-                you dream of.
-            </p>
-
-            <a href="#">Read More →</a>
-
-        </article>
-
-        <article class="card memories">
-
-            <span class="tag">Memories</span>
-
-            <h3>Old Letters</h3>
-
-            <p>
-                Some pages never fade.
-                They simply wait for another
-                rainy evening.
-            </p>
-
-            <a href="#">Read More →</a>
-
-        </article>
-
-        <article class="card life">
-
-            <span class="tag">Alone</span>
-
-            <h3>Empty Room</h3>
-
-            <p>
-                Even empty rooms remember
-                the laughter they once held.
-            </p>
-
-            <a href="#">Read More →</a>
-
-        </article>
-
-    </div>
+</div>
 
 </section>
-<!-- ==========================================
-     ABOUT SECTION
-========================================== -->
 
-<section id="about" class="about">
+<!-- About -->
 
-    <div class="about-image">
+<section id="about">
 
-        <img src="images/profile.jpg"
-             alt="Het Bhavsar">
+<h2>
 
-    </div>
+About Me
 
-    <div class="about-content">
-
-        <h2>About Me</h2>
-
-        <p>
-
-            Welcome to <strong>Ek Doordarshi</strong>.
-
-            This space is where emotions become poetry.
-            Every verse is inspired by silence, memories,
-            hope and the beauty hidden inside ordinary life.
-
-        </p>
-
-        <p>
-
-            My goal is simple —
-            to create words that stay with people
-            long after they finish reading.
-
-        </p>
-
-        <a href="#instagram" class="btn">
-
-            Follow My Journey
-
-        </a>
-
-        <div class="about-stats">
-
-            <div class="stat">
-
-                <h3>100+</h3>
-
-                <p>Poems</p>
-
-            </div>
-
-            <div class="stat">
-
-                <h3>10K+</h3>
-
-                <p>Readers</p>
-
-            </div>
-
-            <div class="stat">
-
-                <h3>Daily</h3>
-
-                <p>Writing</p>
-
-            </div>
-
-        </div>
-
-    </div>
+</h2>
 
 </section>
 
+<!-- Instagram -->
 
-<!-- ==========================================
-     INSTAGRAM
-========================================== -->
+<section id="instagram">
 
-<section id="instagram" class="instagram">
+<h2>
 
-    <h2>Instagram</h2>
+Instagram
 
-    <p class="subtitle">
-
-        Poetry, thoughts and emotions shared every day.
-
-    </p>
-
-    <div class="instagram-grid">
-
-        <div class="instagram-card">
-            <img src="images/post1.jpg" alt="Post 1">
-            <div class="instagram-overlay">
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-
-        <div class="instagram-card">
-            <img src="images/post2.jpg" alt="Post 2">
-            <div class="instagram-overlay">
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-
-        <div class="instagram-card">
-            <img src="images/post3.jpg" alt="Post 3">
-            <div class="instagram-overlay">
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-
-        <div class="instagram-card">
-            <img src="images/post4.jpg" alt="Post 4">
-            <div class="instagram-overlay">
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-
-        <div class="instagram-card">
-            <img src="images/post5.jpg" alt="Post 5">
-            <div class="instagram-overlay">
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-
-        <div class="instagram-card">
-            <img src="images/post6.jpg" alt="Post 6">
-            <div class="instagram-overlay">
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="instagram-button">
-
-        <a href="https://instagram.com/ek.doordarshi"
-
-           target="_blank"
-
-           class="btn">
-
-            Visit Instagram
-
-        </a>
-
-    </div>
+</h2>
 
 </section>
-
-
-<!-- ==========================================
-     CONTACT
-========================================== -->
-
-<section id="contact" class="contact">
-
-    <h2>Let's Connect</h2>
-
-    <p class="subtitle">
-
-        Have something to share?
-        I'd love to hear from you.
-
-    </p>
-
-    <div class="contact-box">
-
-        <form class="contact-grid">
-
-            <input
-                type="text"
-                placeholder="Your Name"
-                required>
-
-            <input
-                type="email"
-                placeholder="Your Email"
-                required>
-
-            <textarea
-                placeholder="Write your message..."
-                required></textarea>
-
-        </form>
-
-        <div class="contact-submit">
-
-            <button class="btn">
-
-                Send Message
-
-            </button>
-
-        </div>
-
-        <div class="socials">
-
-            <a href="https://instagram.com/ek.doordarshi" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a href="#">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-
-            <a href="#">
-                <i class="fab fa-x-twitter"></i>
-            </a>
-
-            <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     FOOTER
-========================================== -->
 
 <footer>
 
-    <div class="footer-logo">
+<p>
 
-        एक दूरदर्शी
+© 2026 Ek Doordarshi
 
-    </div>
-
-    <p class="footer-text">
-
-        Poetry beyond words.
-
-    </p>
-
-    <div class="footer-links">
-
-        <a href="#home">Home</a>
-
-        <a href="#poems">Poetry</a>
-
-        <a href="#about">About</a>
-
-        <a href="#instagram">Instagram</a>
-
-        <a href="#contact">Contact</a>
-
-    </div>
-
-    <div class="footer-bottom">
-
-        © <span id="year"></span>
-        Ek Doordarshi.
-        All Rights Reserved.
-
-    </div>
+</p>
 
 </footer>
+
+<script type="module"
+src="js/threeScene.js"></script>
+
+<script src="js/animations.js"></script>
+
+<script src="js/scroll.js"></script>
+
+<script src="js/cursor.js"></script>
 
 <script src="script.js"></script>
 
