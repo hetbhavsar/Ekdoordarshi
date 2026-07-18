@@ -537,19 +537,23 @@ width:100%;
 
 header{
 
-min-height:95vh;
+min-height:100vh;
 
 display:flex;
 
-flex-direction:column;
+align-items:center;
 
 justify-content:center;
 
-align-items:center;
+flex-direction:column;
 
 text-align:center;
 
-padding:50px 20px;
+padding:120px 20px 80px;
+
+position:relative;
+
+z-index:2;
 
 }
 
@@ -569,29 +573,35 @@ header h1{
 
 font-family:'Noto Serif Devanagari',serif;
 
-font-size:clamp(70px,10vw,130px);
+font-size:clamp(90px,12vw,170px);
 
-margin-bottom:25px;
+line-height:1;
 
-line-height:1.1;
+margin:25px 0;
+
+letter-spacing:2px;
 
 text-shadow:
 
-0 0 30px rgba(160,55,80,.35);
+0 0 40px rgba(255,255,255,.12),
+
+0 0 80px rgba(150,40,70,.18);
 
 }
 
 .hero-text{
 
-max-width:760px;
+max-width:850px;
 
-font-size:24px;
+margin:35px auto;
 
-line-height:1.9;
+font-size:34px;
 
-color:var(--muted);
+line-height:1.7;
 
-margin-bottom:40px;
+font-family:'Noto Serif Devanagari',serif;
+
+color:#f1e8e8;
 
 }
 
@@ -599,12 +609,15 @@ margin-bottom:40px;
 
 display:flex;
 
-gap:20px;
+justify-content:center;
+
+gap:24px;
+
+margin-top:45px;
 
 flex-wrap:wrap;
 
-justify-content:center;
-
+}
 }
 
 .btn{
@@ -1980,9 +1993,15 @@ font-size:56px;
 
 header small{
 
-letter-spacing:3px;
+font-size:17px;
 
-font-size:12px;
+letter-spacing:8px;
+
+color:#ccb2b8;
+
+margin-bottom:10px;
+
+}
 
 }
 
