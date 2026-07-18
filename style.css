@@ -1,160 +1,187 @@
-/* =========================================
-   GOOGLE DESIGN SYSTEM
-========================================= */
+/*============================
 
-:root{
+RESET
 
-    /* Colors */
-
-    --bg:#08090f;
-
-    --bg-light:#10131c;
-
-    --primary:#f5f2e8;
-
-    --secondary:#bdb7aa;
-
-    --accent:#d9c38f;
-
-    --glass:rgba(255,255,255,.08);
-
-    --border:rgba(255,255,255,.12);
-
-}
-
-
-/* =========================================
-   RESET
-========================================= */
+=============================*/
 
 *{
 
-    margin:0;
+margin:0;
 
-    padding:0;
+padding:0;
 
-    box-sizing:border-box;
+box-sizing:border-box;
 
 }
 
 html{
 
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 
 }
 
 body{
 
-    background:var(--bg);
+background:#08090f;
 
-    color:var(--primary);
+color:#ffffff;
 
-    font-family:"Inter",sans-serif;
+font-family:"Inter",sans-serif;
 
-    overflow-x:hidden;
-
-}
-
-
-/* =========================================
-   TYPOGRAPHY
-========================================= */
-
-h1,h2,h3,h4{
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-weight:500;
+overflow-x:hidden;
 
 }
 
-a{
+/*============================
 
-    color:inherit;
+LOADER
 
-    text-decoration:none;
-
-}
-
-ul{
-
-    list-style:none;
-
-}
-
-img{
-
-    max-width:100%;
-
-    display:block;
-
-}
-
-
-/* =========================================
-   LOADER
-========================================= */
+=============================*/
 
 .loader{
 
-    height:100vh;
+position:fixed;
 
-    display:flex;
+inset:0;
 
-    justify-content:center;
+display:flex;
 
-    align-items:center;
+justify-content:center;
 
-}
+align-items:center;
 
-.loader-logo{
+background:#08090f;
 
-    font-size:4rem;
+z-index:9999;
 
-    letter-spacing:6px;
-
-}
-
-
-/* =========================================
-   NAVBAR
-========================================= */
-
-.navbar{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:25px 8%;
+transition:1s;
 
 }
 
-.logo{
+.loader-content{
 
-    font-size:1.5rem;
-
-    font-family:"Cormorant Garamond",serif;
+text-align:center;
 
 }
 
-nav ul{
+.loader h1{
 
-    display:flex;
+font-family:"Cormorant Garamond",serif;
 
-    gap:35px;
+font-size:5rem;
+
+font-weight:500;
+
+letter-spacing:8px;
 
 }
 
+.loader p{
 
-/* =========================================
-   HERO
-========================================= */
+margin-top:15px;
+
+color:#bdb7aa;
+
+letter-spacing:3px;
+
+}
+
+/*============================
+
+HERO
+
+=============================*/
 
 .hero{
 
-    height:100vh;
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+.hero-content{
+
+max-width:850px;
+
+}
+
+.subtitle{
+
+letter-spacing:6px;
+
+color:#bdb7aa;
+
+margin-bottom:20px;
+
+text-transform:uppercase;
+
+font-size:.85rem;
+
+}
+
+.hero h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:7rem;
+
+font-weight:500;
+
+margin-bottom:25px;
+
+}
+
+.description{
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+color:#d7d7d7;
+
+margin-bottom:45px;
+
+}
+
+.buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.buttons a{
+
+padding:15px 35px;
+
+border:1px solid rgba(255,255,255,.2);
+
+text-decoration:none;
+
+color:white;
+
+border-radius:40px;
+
+transition:.4s;
+
+}
+
+.buttons a:hover{
+
+background:white;
+
+color:black;
 
 }
