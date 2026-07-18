@@ -226,10 +226,9 @@ opacity:0;
 ===================== */
 
 .moon{
-    position:absolute;
-
-    top:30px;
-    right:30px;
+    position:fixed;
+    top:70px;
+    right:40px;
 
     width:180px;
     height:180px;
