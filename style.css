@@ -226,12 +226,17 @@ opacity:0;
 ===================== */
 
 .moon{
-    position:fixed;
-    top:70px;
-    right:40px;
 
-    width:180px;
+    position: fixed;
+    top: 60px;
+    right: 40px;
+    display: block;
+
+      width:180px;
     height:180px;
+    border-radius:50%;
+    z-index:1;
+}
 
     border-radius:50%;
     overflow:hidden;
