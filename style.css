@@ -128,26 +128,15 @@ z-index:-3;
 ========================================== */
 
 .moon{
-    position: fixed;
-    width: 320px;
-    height: 320px;
+    position: fixed !important;
 
-    top: 260px;      /* Moon niche */
-    right: 80px;     /* Right side */
+    top: 350px !important;
+    right: 80px !important;
 
-    border-radius: 50%;
-    z-index: 10;
+    width: 320px !important;
+    height: 320px !important;
 
-    background: radial-gradient(circle at 35% 35%,
-        #ffffff 0%,
-        #f2f2f2 50%,
-        #d8d8d8 100%);
-
-    box-shadow:
-        0 0 60px rgba(255,255,255,.45),
-        0 0 140px rgba(255,255,255,.20);
-
-    animation: moonFloat 8s ease-in-out infinite;
+    z-index: 999 !important;
 }
 
 @keyframes moonFloat{
