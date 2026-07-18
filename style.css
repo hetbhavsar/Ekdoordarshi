@@ -576,7 +576,7 @@ header{
     justify-content:center;
     flex-direction:column;
     text-align:center;
-    padding:80px 20px 40px;
+    padding:70px 20px 30px;
     position:relative;
     z-index:2;
 }
@@ -603,21 +603,20 @@ margin-bottom:20px;
 
 header h1{
 
-font-family:'Noto Serif Devanagari',serif;
+    font-family:'Noto Serif Devanagari',serif;
 
-font-size:clamp(70px,9vw,145px);
+    font-size:clamp(42px,5.5vw,72px);
 
-line-height:1;
+    font-weight:700;
 
-margin:25px 0;
+    line-height:1.05;
 
-letter-spacing:2px;
+    margin:10px 0 15px;
 
-text-shadow:
+    letter-spacing:.5px;
 
-0 0 40px rgba(255,255,255,.12),
-
-0 0 80px rgba(150,40,70,.18);
+    text-shadow:
+        0 0 15px rgba(255,255,255,.08);
 
 }
 
@@ -1947,48 +1946,80 @@ transform:rotate(360deg);
 
 @media(max-width:992px){
 
+/* ---------- Navbar ---------- */
+
 nav{
-
-padding:16px 25px;
-
+    width:92%;
+    max-width:1400px;
+    padding:12px 30px;
+    border-radius:60px;
 }
 
 nav ul{
-
-gap:20px;
-
+    gap:35px;
 }
 
+nav ul li a{
+    font-size:18px;
+}
+
+.logo{
+    font-size:42px;
+}
+
+
+/* ---------- Hero ---------- */
+
 header h1{
-    font-size: clamp(52px, 8vw, 84px);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -2px;
-    margin-bottom: 20px;
+    font-family:'Noto Serif Devanagari',serif;
+    font-size:clamp(42px,6vw,72px);
+    font-weight:700;
+    line-height:1.05;
+    letter-spacing:0;
+    margin:8px 0 15px;
+    text-shadow:
+        0 0 15px rgba(255,255,255,.08);
+}
+
+.hero-small{
+    font-size:14px;
+    letter-spacing:4px;
+    margin-bottom:10px;
 }
 
 .hero-text{
-    font-size: clamp(18px, 2vw, 24px);
-    line-height: 1.8;
-    color: rgba(255,255,255,.85);
-    max-width: 700px;
-    margin: 0 auto;
+    font-size:clamp(16px,1.6vw,20px);
+    line-height:1.6;
+    color:rgba(255,255,255,.85);
+    max-width:550px;
+    margin:0 auto 25px;
 }
 
+.hero-buttons{
+    gap:15px;
+    margin-top:10px;
+}
+
+.btn{
+    min-width:170px;
+    height:50px;
+    font-size:16px;
+}
+
+.scroll-down{
+    margin-top:30px;
+}
+
+
+/* ---------- About ---------- */
+
 #about{
-
-grid-template-columns:1fr;
-
-gap:40px;
-
+    grid-template-columns:1fr;
+    gap:40px;
 }
 
 .instagram-box{
-
-padding:40px;
-
-}
-
+    padding:40px;
 }
 
 /* ==========================
@@ -2164,17 +2195,12 @@ font-size:17px;
 }
 
 .moon{
-
-width:170px;
-
-height:170px;
-
-right:-40px;
-
-top:60px;
-
-opacity:.6;
-
+    width:130px;
+    height:130px;
+    top:35px;
+    right:25px;
+    opacity:.45;
+    z-index:1;
 }
 
 }
