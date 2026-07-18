@@ -2249,3 +2249,86 @@ transform:scale(1.4);
 }
 
 }
+/* ===========================
+   CLOUDS
+=========================== */
+
+.cloud{
+
+position:fixed;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+filter:blur(35px);
+
+pointer-events:none;
+
+z-index:-3;
+
+animation:cloudMove linear infinite;
+
+}
+
+.cloud1{
+
+width:320px;
+
+height:90px;
+
+top:12%;
+
+left:-350px;
+
+animation-duration:70s;
+
+}
+
+.cloud2{
+
+width:250px;
+
+height:70px;
+
+top:28%;
+
+left:-300px;
+
+animation-duration:95s;
+
+animation-delay:-25s;
+
+}
+
+.cloud3{
+
+width:380px;
+
+height:110px;
+
+top:42%;
+
+left:-450px;
+
+animation-duration:120s;
+
+animation-delay:-60s;
+
+}
+
+@keyframes cloudMove{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(calc(100vw + 700px));
+
+}
+
+}
