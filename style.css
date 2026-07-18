@@ -132,21 +132,18 @@ z-index:-3;
 
 .moon{
     position: absolute;
-    top: 100px;
-    right: 70px;
+    top: 120px;
+    right: 80px;
 
     width: 180px;
     height: 180px;
 
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%,
-        #ffffff 0%,
-        #f3f3f3 55%,
-        #d8d8d8 100%);
+    background: #fff;
 
     box-shadow:
-        0 0 40px rgba(255,255,255,.45),
-        0 0 80px rgba(255,255,255,.18);
+        0 0 35px rgba(255,255,255,.5),
+        0 0 70px rgba(255,255,255,.2);
 
     overflow: hidden;
     z-index: 1;
@@ -154,16 +151,14 @@ z-index:-3;
 }
 
 .moon::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:50%;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
     background:
-        radial-gradient(circle at 28% 28%, rgba(185,185,185,.30) 0 14px, transparent 15px),
-        radial-gradient(circle at 70% 30%, rgba(185,185,185,.25) 0 18px, transparent 19px),
-        radial-gradient(circle at 52% 72%, rgba(185,185,185,.25) 0 16px, transparent 17px),
-        radial-gradient(circle at 82% 60%, rgba(185,185,185,.20) 0 14px, transparent 15px),
-        radial-gradient(circle at 20% 70%, rgba(185,185,185,.18) 0 10px, transparent 11px);
+        radial-gradient(circle at 30% 30%, rgba(180,180,180,.30) 0 14px, transparent 15px),
+        radial-gradient(circle at 70% 35%, rgba(180,180,180,.25) 0 18px, transparent 19px),
+        radial-gradient(circle at 55% 70%, rgba(180,180,180,.25) 0 16px, transparent 17px);
 }
 
 .moon::after{
@@ -314,7 +309,7 @@ padding:120px 20px 60px;
 
 position:relative;
 
-overflow:hidden;
+/* overflow:hidden; */
 
 }
 
