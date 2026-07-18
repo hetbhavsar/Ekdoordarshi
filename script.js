@@ -159,25 +159,6 @@ observer.observe(el);
 
 });
 
-
-
-   MOON PARALLAX
-
-
-const moon=document.querySelector(".moon");
-
-document.addEventListener("mousemove",(e)=>{
-
-const x=(e.clientX/window.innerWidth-.5)*25;
-
-const y=(e.clientY/window.innerHeight-.5)*25;
-
-moon.style.transform=
-
-`translate(${x}px,${y}px)`;
-
-});
-
 /* ==========================================
    SMOOTH NAV
 ========================================== */
