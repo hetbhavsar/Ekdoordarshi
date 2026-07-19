@@ -27,8 +27,6 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -38,9 +36,6 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     animation: fadeUp .8s ease;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 }
 
 /*==========================================
@@ -178,9 +173,6 @@ body::after {
     overflow: hidden;
     z-index: -2;
     animation: moonFloat 8s ease-in-out infinite;
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 }
 
 .moon::before {
@@ -371,9 +363,6 @@ header h1 {
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, .15),
         0 15px 40px rgba(0, 0, 0, .35);
-    will-change: transform, box-shadow;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .btn::before {
@@ -538,7 +527,6 @@ section>.subtitle {
     border: 1px solid rgba(255, 255, 255, .07);
     overflow: hidden;
     transition: all .45s ease;
-    will-change: transform, box-shadow;
 }
 
 .card::before {
@@ -988,6 +976,16 @@ footer p {
         font-size: 30px;
     }
 
+    /* Fix: poem-type cards (Love Letter/Birthday/Healing/Custom) were forced into 4 columns, overflowing off-screen on mobile */
+    .poem-types {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .custom-poem-box {
+        padding: 30px 20px;
+    }
+
     /* Fix: donate box (QR / OR / UPI ID) was squeezing side-by-side instead of stacking */
     .donate-box {
         flex-direction: column;
@@ -1040,42 +1038,6 @@ footer p {
 
     .card h3 {
         font-size: 24px;
-    }
-}
-
-
-
-/* =====================
-   REDUCED MOTION
-===================== */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    .moon {
-        animation: none;
-    }
-
-    .stars {
-        animation: none;
-    }
-
-    .background-animation span {
-        animation: none;
-    }
-
-    body::after {
-        animation: none;
-    }
-
-    .scroll-down {
-        animation: none;
     }
 }
 
@@ -1342,19 +1304,19 @@ footer p {
 }
 
 /* =========================================
-   📱 MOBILE FIXES — moon, OR text, nav scroll, performance
+   📱 MOBILE FIXES — moon overlap, nav scroll spacing, performance
 ========================================= */
 
 @media (max-width: 768px) {
 
-    /* Fix: moon — below navbar, full size like screenshot */
+    /* Fix: moon was too big and overlapping nav/heading/content on scroll */
     .moon {
-        width: 180px;
-        height: 180px;
-        top: 130px;
-        right: 20px;
-        opacity: .8;
-        z-index: -2;
+        width: 90px;
+        height: 90px;
+        top: 15px;
+        right: 15px;
+        opacity: .5;
+        z-index: -5;
     }
 
     /* Fix: taller stacked nav (column layout) was hiding behind section headings on scroll */
@@ -1383,71 +1345,37 @@ footer p {
         -webkit-backdrop-filter: blur(8px);
         backdrop-filter: blur(8px);
     }
+}
 
-    /* Fix: donate box OR text visible between QR and UPI on mobile */
+@media (max-width: 480px) {
+    .moon {
+        width: 60px;
+        height: 60px;
+        opacity: .35;
+    }
+
+    /* Fix: on very small phones, even 2 columns is tight — go single column */
+    .poem-types {
+        grid-template-columns: 1fr;
+    }
+
+    /* Fix: donate box (QR / OR / UPI ID) was squeezing side-by-side instead of stacking */
     .donate-box {
         flex-direction: column;
-        gap: 25px;
+        gap: 30px;
     }
 
     .donate-or {
         width: 100%;
-        font-size: 16px;
-        color: #b8a8a4;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        position: relative;
-        padding: 8px 0;
     }
 
     .donate-or::before,
     .donate-or::after {
-        display: block;
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 1px;
-        background: rgba(255, 255, 255, .15);
-    }
-
-    .donate-or::before {
-        top: 0;
-        right: auto;
-    }
-
-    .donate-or::after {
-        bottom: 0;
-        left: auto;
+        display: none;
     }
 
     .upi-id-box span {
         font-size: 18px;
         word-break: break-all;
-    }
-}
-
-@media (max-width: 480px) {
-    .moon {
-        width: 150px;
-        height: 150px;
-        top: 120px;
-        right: 10px;
-        opacity: .75;
-    }
-
-    .donate-box {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .donate-or {
-        font-size: 14px;
-        letter-spacing: 3px;
-    }
-
-    .upi-id-box span {
-        font-size: 16px;
     }
 }
