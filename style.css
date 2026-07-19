@@ -1347,13 +1347,13 @@ footer p {
 
 @media (max-width: 768px) {
 
-    /* Fix: moon — visible beside navbar like screenshot */
+    /* Fix: moon — below navbar, full size like screenshot */
     .moon {
-        width: 160px;
-        height: 160px;
-        top: 45px;
-        right: 15px;
-        opacity: .75;
+        width: 180px;
+        height: 180px;
+        top: 130px;
+        right: 20px;
+        opacity: .8;
         z-index: -2;
     }
 
@@ -1430,11 +1430,11 @@ footer p {
 
 @media (max-width: 480px) {
     .moon {
-        width: 130px;
-        height: 130px;
-        top: 40px;
-        right: 8px;
-        opacity: .7;
+        width: 150px;
+        height: 150px;
+        top: 120px;
+        right: 10px;
+        opacity: .75;
     }
 
     .donate-box {
