@@ -976,6 +976,26 @@ footer p {
         font-size: 30px;
     }
 
+    /* Fix: donate box (QR / OR / UPI ID) was squeezing side-by-side instead of stacking */
+    .donate-box {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .donate-or {
+        width: 100%;
+    }
+
+    .donate-or::before,
+    .donate-or::after {
+        display: none;
+    }
+
+    .upi-id-box span {
+        font-size: 18px;
+        word-break: break-all;
+    }
+
     footer {
         padding: 120px 20px 80px;
     }
