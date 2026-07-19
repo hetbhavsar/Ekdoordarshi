@@ -1043,6 +1043,42 @@ footer p {
     }
 }
 
+
+
+/* =====================
+   REDUCED MOTION
+===================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .moon {
+        animation: none;
+    }
+
+    .stars {
+        animation: none;
+    }
+
+    .background-animation span {
+        animation: none;
+    }
+
+    body::after {
+        animation: none;
+    }
+
+    .scroll-down {
+        animation: none;
+    }
+}
+
 /* =====================
    END OF STYLES
 ===================== */
@@ -1311,13 +1347,13 @@ footer p {
 
 @media (max-width: 768px) {
 
-    /* Fix: moon — keep visible but not overlapping content */
+    /* Fix: moon — visible beside navbar like screenshot */
     .moon {
-        width: 120px;
-        height: 120px;
-        top: 80px;
-        right: 20px;
-        opacity: .65;
+        width: 160px;
+        height: 160px;
+        top: 45px;
+        right: 15px;
+        opacity: .75;
         z-index: -2;
     }
 
@@ -1394,11 +1430,11 @@ footer p {
 
 @media (max-width: 480px) {
     .moon {
-        width: 100px;
-        height: 100px;
-        top: 70px;
-        right: 10px;
-        opacity: .55;
+        width: 130px;
+        height: 130px;
+        top: 40px;
+        right: 8px;
+        opacity: .7;
     }
 
     .donate-box {
@@ -1413,39 +1449,5 @@ footer p {
 
     .upi-id-box span {
         font-size: 16px;
-    }
-}
-
-/* =====================
-   REDUCED MOTION
-===================== */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    .moon {
-        animation: none;
-    }
-    
-    .stars {
-        animation: none;
-    }
-    
-    .background-animation span {
-        animation: none;
-    }
-    
-    body::after {
-        animation: none;
-    }
-    
-    .scroll-down {
-        animation: none;
     }
 }
