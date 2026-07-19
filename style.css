@@ -1312,11 +1312,11 @@ footer p {
 
     /* Fix: moon was too big and overlapping nav/heading/content on scroll */
     .moon {
-        width: 90px;
-        height: 90px;
-        top: 15px;
-        right: 15px;
-        opacity: .5;
+        width: 130px;
+        height: 130px;
+        top: 100px;
+        right: 20px;
+        opacity: .6;
         z-index: -5;
     }
 
@@ -1358,6 +1358,14 @@ footer p {
     /* Fix: on very small phones, even 2 columns is tight — go single column */
     .poem-types {
         grid-template-columns: 1fr;
+    }
+
+    .moon {
+        width: 100px;
+        height: 100px;
+        top: 90px;
+        right: 15px;
+        opacity: .55;
     }
 
     /* Fix: donate box (QR / OR / UPI ID) was squeezing side-by-side instead of stacking */
