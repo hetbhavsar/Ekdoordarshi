@@ -1272,3 +1272,55 @@ footer p {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+/* =========================================
+   📱 MOBILE FIXES — moon overlap, nav scroll spacing, performance
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* Fix: moon was too big and overlapping nav/heading/content on scroll */
+    .moon {
+        width: 90px;
+        height: 90px;
+        top: 15px;
+        right: 15px;
+        opacity: .5;
+        z-index: -5;
+    }
+
+    /* Fix: taller stacked nav (column layout) was hiding behind section headings on scroll */
+    html {
+        scroll-padding-top: 190px;
+    }
+
+    /* Fix: reduce heavy animated/blur effects for smoother mobile performance */
+    body::after {
+        display: none; /* shooting star */
+    }
+
+    .background-animation span {
+        animation-duration: 30s;
+    }
+
+    nav {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+
+    .card,
+    .instagram-box,
+    .custom-poem-box,
+    .poem-content {
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+    }
+}
+
+@media (max-width: 480px) {
+    .moon {
+        width: 60px;
+        height: 60px;
+        opacity: .35;
+    }
+}
